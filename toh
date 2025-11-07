@@ -1,0 +1,15 @@
+class Solution {
+  public:
+    long long towerOfHanoi(int n, int from, int to, int aux) {
+        
+        if(n == 0) return 0;
+        
+        long long left = towerOfHanoi(n-1, from, aux, to);
+        
+       
+        
+        long long right = towerOfHanoi(n-1, aux, to, from);
+        
+        return left + right + 1;
+    }
+};
